@@ -37,8 +37,8 @@ int main() {
 // C
 
 int main() {
-    int sum = 0;
-    for (int i = 1; i <= 15; i++) {
+    float sum = 0;
+    for (float i = 1; i <= 15; i++) {
         sum += (1/i);
     }
     cout<< sum;
@@ -47,9 +47,10 @@ int main() {
 }
 
 // D
+// I've tried using long int but still the number gets out of range
 
 int main() {
-    int product = 1;
+    long int product = 1;
     for (int i = 1; i <= 20; i++) {
         product *= i;
     }
@@ -369,24 +370,21 @@ int main() {
 // C
 
 int main() {
-
-   
-    
     for (int i = 5; i >= 1; i--) {
-        for (int j = 1; j < i; j++) {
+        for (int j = 1; i > j; j++) {
             cout<< " ";
         }
-        for (int z = 5; z >= i; z--) {
+        for (int z = 5; i < z; z--) {
+            cout << "*";
+        }
+        for (int v = 5; i <= v; v--) {
             cout<< "*";
         }
-        for (int u = 5; u > i; u--) {
-            cout<< "*";
-        }
-        for (int k = 1; k <= i; k++) {
-            cout<< " ";
-        }
+        
         cout<< endl;
-    }   
+    }
+    
+  
     return 0;
 }
 
@@ -437,36 +435,36 @@ loop for the 10 repetitions.
 
 int main()
 {
-    double sum = 0;
-    double temperature;
+    float sum = 0, temperature;
     int i = 0;
     while(i < 10) {
+        cout<< "input temperature" << endl;
         cin>> temperature;
         sum += temperature;
         i++;
     }
 
-    double average = sum / 10;
+    float average = sum / 10;
 
     cout<< average;
 
     return 0;
 }
-
 /*
 12. Write a C++ program using for loop that can compute the following summation of for i = 1 to i = 30 of (i / 3) * 2
 */
 
 int main()
 {
-    double sum = 0;
-    double calculated; 
+    float sum = 0;
+    float calculated; 
     
-    for (int i = 1; i <= 30; i++) {
+    for (float i = 1; i <= 30; i++) {
         calculated = (i / 3.0) * 2.0;
         sum += calculated;
         
     }
+    cout << calculated;
 
     return 0;
 }
@@ -484,6 +482,7 @@ int main()
     float sum = 0;
     float mark, average;
     for (int i = 0; i < 5; i++) {
+        cout<< "input mark" << endl;
         cin>> mark;
         while (mark < 0 || mark > 100) {
             cout<< "the mark should be between 0 and 100. Please input again \n";
@@ -491,19 +490,15 @@ int main()
         }
         sum += mark;
     }
-
     average = sum / 5;
-
-    cout<< "your average is " << average;
-
-
+    cout<< "the average is " << average;
     return 0;
 }
-
 
 /*
 14. Develop a calculator program that computes and displays the result of a single
 requested operation.
+
  E.g. if the input is
  15 * 20, then the program should display 15 * 20 equals 300
 If the operator is not legal, as in the following example
@@ -514,25 +509,17 @@ input: 23 / 0 then the program should display the following:
 */
 
 
+
 int main()
 {
     float num1, num2;
     char InputOperator;
     cout<< "please enter the first number \n";
     cin>> num1;
-
     cout<< "please enter the operation \n";
     cin>> InputOperator;
-
     cout<< "please enter the second number \n";
     cin>> num2;
-
-    num1 = double(num1);
-    num2 = double(num2);
-
-
-
-
     switch(InputOperator) {
         case '*':
             cout<< num1 << " " << InputOperator << " " << num2 << " equals " << num1 * num2;
@@ -553,10 +540,10 @@ int main()
         default:
             cout<< InputOperator << " is unrecognized operator";
     }
-
-
     return 0;
 }
+
+
 
 
 /*
@@ -572,35 +559,37 @@ using namespace std;
 int main()
 {
     char letter;
-    std::cin>> letter;
+    cout << "enter a letter" << endl;
+    cin>> letter;
 
     switch(letter) {
         case 'a':
         case 'A':
-            std::cout<< "its a vowel";
+            cout<< "its a vowel";
             break;
         case 'e':
         case 'E':
-            std::cout<< "its a vowel";
+            cout<< "its a vowel";
             break;
         case 'i':
         case 'I':
-            std::cout<< "its a vowel";
+            cout<< "its a vowel";
             break;
         case 'o':
         case 'O':
-            std::cout<< "its a vowel";
+            cout<< "its a vowel";
             break;
         case 'u':
         case 'U':
-            std::cout<< "its a vowel";
+            cout<< "its a vowel";
             break;
         default:
-            std::cout<< "its a consonant";
+            cout<< "its a consonant";
     }
 
     return 0;
 }
+
 
 
 
