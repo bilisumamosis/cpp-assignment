@@ -651,34 +651,29 @@ int main()
 
 
     }
-
-
-
     bool isLeapYear, isCenturyYear;
-
 
     if (year % 100 == 0) {
         isCenturyYear: true;
     }
-
-    if (!isCenturyYear && year % 4 == 0) {
+    if (isCenturyYear && year % 400 == 0) {
         isLeapYear = true;
     }
-
-      if (month == 2 && day > 28) {
+    if (month == 2 && day > 28) {
         cout<< "invalid day \n";
         isValidDate = false;
-
     }
-
-
     if (isLeapYear) {
         if (month == 2 && day > 29) {
             cout<< "invalid day \n";
             isValidDate = false;
         }
+    } else {
+        if (month == 2 && day > 28) {
+            cout<< "invalid day \n";
+            isValidDate = false;
+        }
     }
-
     if (isValidDate) {
         cout<< "valid date";
     }
