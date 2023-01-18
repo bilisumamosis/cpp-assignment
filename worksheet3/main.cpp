@@ -631,7 +631,7 @@ are 00) and is evenly divisible by 400, then the year is a leap year.
 int main()
 {
     int day, month, year;
-    bool isValidDate = true;
+    bool isValidDate;
     cout<< "please enter the day, followed by the month, followed by the year \n";
     cin>> day >> month >> year;
 
