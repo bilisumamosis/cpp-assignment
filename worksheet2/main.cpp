@@ -70,33 +70,33 @@ largest
 */
 
 int main() {
-    float num1, num2, num3; 
+    float a, b, c; 
     cout<< "enter the first number" << endl;
-    cin>> num1;
+    cin>> a;
     cout<< "enter the second number" << endl;
-    cin>> num2;
+    cin>> b;
     cout<< "enter the third number" << endl;
-    cin>> num3; 
+    cin>> c; 
 
-    if (num1 > num2) {
-        if (num1 > num3) {
-            if (num2 > num3) {
-                cout<< num3 << ", " << num2 << ", " << num1;
+    if (a > b) {
+        if (a > c) {
+            if (b > c) {
+                cout<< c << ", " << b << ", " << a;
             } else {
-                cout << num2 << ", " << num3 << ", " << num1;
+                cout << b << ", " << c << ", " << a;
             }
         } else {
-            cout << num2 << ", " << num1 << ", " << num3;
+            cout << b << ", " << a << ", " << c;
         }
     } else {
-        if (num2 > num3) {
-            if (num1 > num3) {
-                cout << num3 << ", " << num2 << ", " << num1;
+        if (b > c) {
+            if (a > c) {
+                cout << c << ", " << a << ", " << b;
             } else {
-                cout << num1 << ", " << num3 << ", " << num2;
+                cout << a << ", " << c << ", " << b;
             }
         } else {
-            cout << num1 << ", " << num1 << ", " << num3;
+            cout << a << ", " << b << ", " << c;
         }
     }
 
@@ -110,11 +110,8 @@ int main() {
     int sum = 0;
     for (int i = 1; i <= 100; i++) {
         sum += i;
-
     }
-
     cout << sum;
-
 }
 
 
@@ -124,15 +121,14 @@ int main() {
 given by the user. 
 */
 int main() {
-    int number;
-    int sum = 0;
+    int number, sum = 0;
     cout<< "input a positive integer" << endl;
     cin >> number;
 
-    for (int i = 2; i = number - 1; i += 2) {
-        sum += number;
+    for (int i = 2; i <= number - 1; i += 2) {
+        sum += i;
     }
-    cout << sum;
+    cout << endl << sum;
     return 0;
 }
 
@@ -161,54 +157,46 @@ given by the user.
 */
 
 int main() {
-    float num1, num2, num3, min, max, sum, average; 
+    float a, b, c, min, max, sum, average; 
     cout<< "enter the first number" << endl;
-    cin>> num1;
+    cin>> a;
     cout<< "enter the second number" << endl;
-    cin>> num2;
+    cin>> b;
     cout<< "enter the third number" << endl;
-    cin>> num3; 
+    cin>> c; 
 
-    sum = num1 + num2 + num3;
+    sum = a + b + c;
     average = sum / 3;
 
-    if (num1 > num2) {
-        if (num1 > num3) {
-            if (num2 > num3) {
-    
-                max = num1;
-                min = num3;
+    if (a > b) {
+        if (a > c) {
+            if (b > c) {
+                max = a;
+                min = c;
             } else {
-                
-                max = num1;
-                min = num2;
+                max = a;
+                min = b;
             }
         } else {
-            
-            max = num3;
-            min = num2;
+            max = c;
+            min = b;
         }
     } else {
-        if (num2 > num3) {
-            if (num1 > num3) {
-                
-                max = num1;
-                min = num3;
+        if (b > c) {
+            if (a > c) {
+                max = b;
+                min = c;
             } else {
-            
-                max = num2;
-                min = num1;
+                max = b;
+                min = a;
             }
         } else {
-            
-            max = num3;
-            min = num1;
+            max = c;
+            min = a;
         }
     }
-
     cout << "sum: " << sum << " average: " << average << endl;
     cout << "max: " << max << " min: " << min; 
-
     return 0;
 }
 
@@ -221,12 +209,12 @@ int main() {
 int main() {
     float pie = 3.14;
     float radius;
-    cout << "input the radius";
+    cout << "input the radius" << endl;
     cin >> radius;
 
     float area = pie * radius * radius;
 
-    cout << area;
+    cout << "the area is " << area;
     return 0;
 }
 
@@ -236,13 +224,13 @@ int main() {
 
 int main() {
     float a = 1, b = 2, c;
-    cout << "before: " << "a = " << a << " b = " << b << endl;
+    cout << "before swap: " << "a = " << a << " b = " << b << endl;
 
     c = a;
     a = b;
     b = c;
 
-    cout << "after: " << "a = " << a << " b = " << b << endl;
+    cout << "after swap: " << "a = " << a << " b = " << b << endl;
 
     return 0;
 }
@@ -253,12 +241,11 @@ int main() {
 
 int main() {
     float a = 1, b = 2;
-    cout << "before: " << "a = " << a << " b = " << b << endl;
+    cout << "before swap: " << "a = " << a << " b = " << b << endl;
     a = a + b;
     b = a - b;
     a = a - b;
-
-    cout << "after: " << "a = " << a << " b = " << b << endl;
+    cout << "after swap : " << "a = " << a << " b = " << b << endl;
 }
 
 /*
@@ -274,15 +261,15 @@ many of them are larger than 50, and display this result
 */
 
 int main() {
-    
     int number, counted = 0;
     for (int i = 0; i < 10; i++) {
-        bool isInRange = false;
         cout << "enter an integer between 0 and 100" << endl;
         cin >> number; 
-        while (!(number > 0 && number < 100)) {
+        bool isInRange = (number > 0) && (number < 100); // checks if the number we inputed is in range
+        while (!(isInRange)) {
             cout << "please enter an integer between 0 and 100" << endl;
             cin >> number;
+            isInRange = (number > 0) && (number < 100);
         }
         
         if (number > 50) {
@@ -290,7 +277,7 @@ int main() {
         }
     }
 
-    cout << counted << " of them out of 10 were greater than 50";
+    cout << counted << " of them out of 10";
     return 0;
 }
 
