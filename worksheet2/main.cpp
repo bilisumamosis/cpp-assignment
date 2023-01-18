@@ -1,24 +1,44 @@
 #include <iostream>
 using namespace std;
 
+/*
+C++ Assignment
+Given by Mr. Yohans Samuel
+
+Haramaya University - Department of Software Engineering
+
+Section A
+Group Members
+Bilisuma Mosissa (2351/14)
+Bonsa Baker (2407/14)
+Barekegn Asefa (2249/14)
+Biniyam Birhanu (2356/14)
+*/
 
 /* 1) Receive a number and determine whether it is odd or even. */
 int main() {
-    
-    int number;
+    // this program not only checks if the number is even or odd but also if its an integer or not
+    float number;
     cout<< "input a number" << endl;
     cin>> number;
-
-    if (number % 2 == 0) {
-        cout<< "it even";
-    } else {
-        cout<< "its odd";
+    
+    bool isInteger = number == int(number); //checks whether the number is an integer or not
+    
+    while (!(isInteger)) {
+        cout<< "please input an integer" << endl;
+        cin>> number;
+        isInteger = number == int(number);
     }
-
-
+    
+    int intNumber = int(number); // storing the integer version of our number
+    
+    if (intNumber % 2 == 0) {
+        cout<< number << " is even";
+    } else {
+        cout<< number << " is odd";
+    }
     return 0;
 }
-
 
 /*
 2) Obtain two numbers from the keyboard, and determine and display
@@ -105,7 +125,7 @@ given by the user.
 */
 int main() {
     int number;
-    int sum = 0l
+    int sum = 0;
     cout<< "input a positive integer" << endl;
     cin >> number;
 
@@ -290,7 +310,7 @@ int main()
         factorial *= i;
     }
 
-    cout<< fact;
+    cout<< factorial;
 
     return 0;
 }
