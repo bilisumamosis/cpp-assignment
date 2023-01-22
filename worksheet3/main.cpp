@@ -11,7 +11,7 @@ d. 1*2*3*…*20
 */
 
 // 1. A
-
+// for loop
 int main() {
     int sum = 0;
     for (int i = 1; i <= 100; i++) {
@@ -22,8 +22,39 @@ int main() {
     return 0;
 }
 
-// B
+// do while loop
 
+int main() {
+    int sum = 0, i = 1;
+    
+    do {
+        cout<< i << " ";
+        sum += i;
+        
+        i++;
+    } while (i <= 50);
+    // cout << sum;
+    return 0;
+}
+
+
+
+// while loop
+
+int main() {
+    int sum = 0 , i = 1;
+    while (i <= 100) {
+        sum += i;
+        i++;
+    }
+    
+    cout << sum;
+
+    return 0;
+}
+
+// B
+// for loop
 int main() {
     int sum = 0;
     for (int i = 5; i <= 50; i += 5) {
@@ -34,11 +65,44 @@ int main() {
     return 0;
 }
 
-// C
+// do while loop
 
 int main() {
-    float sum = 0;
-    for (float i = 1; i <= 15; i++) {
+    int sum = 0, i = 5;
+    
+    do {
+       
+        sum += i;
+        i += 5;
+    } while (i <= 50);
+    cout << sum;
+    return 0;
+}
+
+// using while loop
+
+int main() {
+    int sum = 0, i = 5;
+    
+    while (i <= 50) {
+        sum += i;
+        i += 5;
+    } 
+    cout << sum;
+    return 0;
+}
+
+
+
+
+
+// C
+
+// using for loop 
+
+int main() {
+    int sum = 0;
+    for (int i = 1; i <= 15; i++) {
         sum += (1/i);
     }
     cout<< sum;
@@ -46,11 +110,32 @@ int main() {
     return 0;
 }
 
-// D
-// I've tried using long int but still the number gets out of range
+// using do while loop 
 
 int main() {
-    long int product = 1;
+    float sum = 0, i = 1;
+    do {
+        sum += (1 / i);
+        i++;
+    } while (i <= 15);
+    cout << sum;
+}
+
+// using a while loop
+
+int main() {
+    float sum = 0, i = 1;
+    while (i <= 15) {
+        sum += (1 / i);
+        i++;
+    } while (i <= 15);
+    cout << sum;
+}
+
+// D
+// using a for loop
+int main() {
+    double product = 1;
     for (int i = 1; i <= 20; i++) {
         product *= i;
     }
@@ -58,6 +143,33 @@ int main() {
 
     return 0;
 }
+
+// using a while loop
+
+int main() {
+    double product = 1;
+    int i = 1;
+    while (i <= 20) {
+        product *= i;
+        i++;
+    }
+    
+    cout << product;
+}
+
+// using a do while loop
+int main() {
+    double product = 1;
+    int i = 1;
+    do {
+       
+        product *= i;
+        i++;
+    } while (i <= 20);
+    
+    cout << product;
+}
+
 
 /*
 2. write an application to print out the numbers 10 through 49 in the following manner
