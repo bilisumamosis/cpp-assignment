@@ -597,7 +597,7 @@ int main()
         cout<< "input mark" << endl;
         cin>> mark;
         while (mark < 0 || mark > 100) {
-            cout<< "the mark should be between 0 and 100. Please input again \n";
+            cout<< "the mark should not be less than 0 or greater than 100. Please input again \n";
             cin>> mark;
         }
         sum += mark;
@@ -743,7 +743,7 @@ are 00) and is evenly divisible by 400, then the year is a leap year.
 int main()
 {
     int day, month, year;
-    bool isValidDate = true;
+    bool isValidDate;
     cout<< "please enter the day, followed by the month, followed by the year \n";
     cin>> day >> month >> year;
 

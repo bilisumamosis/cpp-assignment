@@ -1,5 +1,5 @@
 <h1>C++ Assignment</h1>
-<p>Given by Mr. Yohans Samuel</p>
+<p><i>Given by Mr. Yohans Samuel</i></p>
 
 <h2>Haramaya University - Department of Software Engineering</h2>
 <h3>Section A</h3>
