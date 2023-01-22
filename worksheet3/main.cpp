@@ -28,12 +28,12 @@ int main() {
     int sum = 0, i = 1;
     
     do {
-        cout<< i << " ";
+        
         sum += i;
         
         i++;
-    } while (i <= 50);
-    // cout << sum;
+    } while (i <= 100);
+    cout << sum;
     return 0;
 }
 
@@ -52,6 +52,7 @@ int main() {
 
     return 0;
 }
+
 
 // B
 // for loop
@@ -93,16 +94,13 @@ int main() {
 }
 
 
-
-
-
 // C
 
 // using for loop 
 
 int main() {
-    int sum = 0;
-    for (int i = 1; i <= 15; i++) {
+    double sum = 0;
+    for (double i = 1; i <= 15; i++) {
         sum += (1/i);
     }
     cout<< sum;
@@ -131,6 +129,9 @@ int main() {
     } while (i <= 15);
     cout << sum;
 }
+
+
+
 
 // D
 // using a for loop
@@ -169,6 +170,8 @@ int main() {
     
     cout << product;
 }
+
+
 
 
 /*
