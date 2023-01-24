@@ -78,30 +78,64 @@ int main() {
     cout<< "enter the third number" << endl;
     cin>> c; 
 
+    // if all are equal
 
-    if (a > b) {
-        if (a > c) {
-            if (b > c) {
-                cout<< c << ", " << b << ", " << a;
-            } else {
-                cout << b << ", " << c << ", " << a;
-            }
-        } else {
-            cout << b << ", " << a << ", " << c;
-        }
-    } else {
-        if (b > c) {
+    if (a == b && a == c && b == c) {
+        cout << a;
+    } 
+    // if two are equal
+    else if (a == b || a == c || b == c) {
+        
+
+        if (a == b) {
             if (a > c) {
-                cout << c << ", " << a << ", " << b;
+                cout << c << ", " << a;
             } else {
-                cout << a << ", " << c << ", " << b;
+                cout << a << ", " << c;
+            }
+        } else if (a == c) {
+            if (a > b) {
+                cout << b << ", " << a;
+            } else {
+                cout << a << ", " << b;
+            }
+        } else if (b == c) {
+            if (b > a) {
+                cout << a << ", " << b;
+            } else {
+                cout << b << ", " << a;
+            }
+        }
+
+    } 
+
+    // if all are different
+    else {
+        
+        if (a > b) {
+            if (a > c) {
+                if (b > c) {
+                    cout<< c << ", " << b << ", " << a;
+                } else {
+                    cout << b << ", " << c << ", " << a;
+                }
+            } else {
+                cout << b << ", " << a << ", " << c;
             }
         } else {
-            cout << a << ", " << b << ", " << c;
+            if (b > c) {
+                if (a > c) {
+                    cout << c << ", " << a << ", " << b;
+                } else {
+                    cout << a << ", " << c << ", " << b;
+                }
+            } else {
+                cout << a << ", " << b << ", " << c;
+            }
         }
-    }
 
     return 0;
+}
 }
 
 /*
@@ -114,6 +148,12 @@ int main() {
     }
     cout << sum;
 }
+
+    }
+
+    
+
+    
 
 
 
