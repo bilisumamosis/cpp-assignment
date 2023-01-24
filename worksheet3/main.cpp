@@ -749,8 +749,30 @@ int main()
     bool isValidDate;
     cout<< "please enter the day, followed by the month, followed by the year \n";
     cin>> day >> month >> year;
+	
+	if (day < 1) {
+        cout<< "invalid day \n";
+        isValidDate = false;
+    }
 
-    if (day > 30 || day < 1) {
+    if (month > 12 || month < 1) {
+        cout<< "invalid month \n";
+        isValidDate = false;
+    }
+
+    if (year < 0) {
+        cout<< "invalid year \n";
+        isValidDate = false;
+    }
+	if ((month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (day > 31)) {
+		cout << "invalid day " << day;
+		isValidDate = false;
+	}
+	if ((month == 4 || month == 6 || month == 9 || month == 11) && (day > 30)) {
+		cout << "invalid day " << day;
+		isValidDate = false;
+	}
+    if (day < 1) {
         cout<< "invalid day \n";
         isValidDate = false;
     }
