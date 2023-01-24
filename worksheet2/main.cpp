@@ -134,8 +134,9 @@ int main() {
             }
         }
 
-    return 0;
+    
 }
+    return 0;
 }
 
 /*
@@ -198,7 +199,9 @@ given by the user.
 */
 
 int main() {
-    float a, b, c, min, max, sum, average; 
+    float a, b, c, max, min, sum, average; 
+    
+
     cout<< "enter the first number" << endl;
     cin>> a;
     cout<< "enter the second number" << endl;
@@ -208,36 +211,95 @@ int main() {
 
     sum = a + b + c;
     average = sum / 3;
+    cout << "sum: " << sum << endl;
+    cout << "average: " << average << endl;
 
-    if (a > b) {
-        if (a > c) {
-            if (b > c) {
+    // if all are equal
+
+    if (a == b && a == c && b == c) {
+        
+        cout << "there is neither maximum nor minimum";
+    } 
+    // if two are equal
+    else if (a == b || a == c || b == c) {
+        
+
+        if (a == b) {
+            if (a > c) {
+                
                 max = a;
                 min = c;
             } else {
+                
+                max = c;
+                min = a;
+            }
+        } else if (a == c) {
+            if (a > b) {
+                
                 max = a;
                 min = b;
-            }
-        } else {
-            max = c;
-            min = b;
-        }
-    } else {
-        if (b > c) {
-            if (a > c) {
-                max = b;
-                min = c;
             } else {
+                
                 max = b;
                 min = a;
             }
-        } else {
-            max = c;
-            min = a;
+        } else if (b == c) {
+            if (b > a) {
+                
+                max = b;
+                min = a;
+            } else {
+                
+                max = a;
+                min = b;
+            }
         }
-    }
-    cout << "sum: " << sum << " average: " << average << endl;
-    cout << "max: " << max << " min: " << min; 
+        
+        cout << "max: " << max << endl << "min: " << min;
+
+    } 
+
+    // if all are different
+    else {
+        
+        if (a > b) {
+            if (a > c) {
+                if (b > c) {
+                    
+                    max = a;
+                    min = c;
+                } else {
+                    
+                    max = a;
+                    min = b;
+                }
+            } else {
+                
+                max = c;
+                min = b;
+            }
+        } else {
+            if (b > c) {
+                if (a > c) {
+                    
+                    max = b;
+                    min = c;
+                } else {
+                    
+                    max = b;
+                    min = a;
+                }
+            } else {
+                
+                max = c;
+                min = a;
+            }
+            
+        }
+    cout << "max: " << max << endl << "min: " << min;
+    
+}
     return 0;
 }
 
